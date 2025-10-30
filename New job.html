@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>STATEHELA APP</title>
+  <meta name="description"
+    content="Download the app and gain easy access to all Statehela ways of earning at your fingertips. Start earning with Statehela by completing tasks such as watching sponsored videos on TikTok, YouTube, answering surveys and trivia, promoting ads, and digital marketing.">
+
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', Arial, sans-serif;
+      background: linear-gradient(120deg, #ecd68e, #fda085);
+      color: #333;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      overflow: hidden;
+    }
+
+    .app-container {
+      width: 90%;
+      max-width: 900px;
+      background: #fff;
+      border-radius: 20px;
+      box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.2);
+      text-align: center;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .image-container {
+      display: flex;
+      justify-content: center;
+      margin-top: 15px;
+    }
+
+    .image-container img {
+      max-width: 180px;
+      border-radius: 15px;
+      box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    .content {
+      padding: 20px;
+    }
+
+    .content p {
+      font-size: 16px;
+      line-height: 1.6;
+      color: #555;
+      margin-bottom: 20px;
+    }
+
+    /* Full image section */
+    .custom-image {
+      position: relative;
+      width: 100%;
+      height: 350px;
+      overflow: hidden;
+      border-top: 4px solid #fff;
+    }
+
+    .custom-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      display: block;
+    }
+
+    /* Floating buttons on top of the image */
+    .floating-buttons {
+      position: absolute;
+      bottom: 30px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      gap: 15px;
+      animation: slideIn 1.2s ease-out;
+      z-index: 2;
+    }
+
+    @keyframes slideIn {
+      from {
+        transform: translate(150%, 0);
+        opacity: 0;
+      }
+
+      to {
+        transform: translate(-50%, 0);
+        opacity: 1;
+      }
+    }
+
+    .button {
+      display: inline-block;
+      background: linear-gradient(90deg, blue);
+      color: #fff;
+      padding: 12px 30px;
+      border-radius: 50px;
+      text-transform: uppercase;
+      font-size: 14px;
+      font-weight: bold;
+      text-decoration: none;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    .button:hover {
+      transform: scale(1.1);
+      box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+    }
+
+    .footer {
+      background: #f9f9f9;
+      padding: 10px;
+      text-align: center;
+      font-size: 13px;
+      color: #666;
+      border-top: 1px solid #eee;
+    }
+
+    .footer a {
+      color: #ff758c;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .footer a:hover {
+      text-decoration: underline;
+    }
+
+    /* Offer Popup Styles */
+    #offer-popup {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-color: rgba(0, 0, 0, 0.9);
+      color: #fff;
+      padding: 30px;
+      border-radius: 10px;
+      display: none;
+      z-index: 1000;
+      text-align: center;
+      width: 80%;
+      max-width: 400px;
+      box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.3);
+      animation: fadeInPopup 0.6s ease;
+    }
+
+    @keyframes fadeInPopup {
+      from {
+        opacity: 0;
+        transform: translate(-50%, -40%);
+      }
+
+      to {
+        opacity: 1;
+        transform: translate(-50%, -50%);
+      }
+    }
+
+    #offer-popup img {
+      max-width: 100px;
+      margin-bottom: 20px;
+    }
+
+    #offer-popup .close-btn {
+      position: absolute;
+      top: 5px;
+      right: 10px;
+      font-size: 28px;
+      color: #fff;
+      cursor: pointer;
+    }
+
+    #offer-popup .popup-button {
+      display: inline-block;
+      background: linear-gradient(90deg, #fa709a,red);
+      color: #fff;
+      padding: 12px 35px;
+      margin: 10px;
+      border-radius: 30px;
+      font-size: 16px;
+      font-weight: bold;
+      text-decoration: none;
+      box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    #offer-popup .popup-button:hover {
+      background: linear-gradient(90deg, blue);
+      transform: scale(1.05);
+    }
+
+    @media (max-width: 480px) {
+      #offer-popup {
+        padding: 20px;
+      }
+
+      #offer-popup .popup-button {
+        padding: 10px 25px;
+        font-size: 15px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="app-container">
+
+    <!-- Top white content -->
+    <div class="image-container">
+      <img src="https://play.google.com/intl/en/badges/static/images/badges/en_badge_web_generic.png" 
+       alt="Get it on Google Play" 
+       style="height: 60px;" />
+</a>
+    </div>
+
+    <div class="content">
+      <p>You've seen others earning, and now it's your turn! HelaLink App is the best way to start earning easily.
+        From watching videos, clicking on ads, answering surveys, promoting ads, to digital marketing—there are countless ways to earn daily!
+        Start today with HelaLink.</p>
+    </div>
+
+    <!-- Full image section -->
+    <div class="custom-image">
+      <img src="https://i.postimg.cc/pdJGyGwf/IMG-20251028-WA0009.jpg" alt="Custom Image">
+
+      <div class="floating-buttons">
+        <a href="https://helalink.com/register.php?ref=Shaurya" class="button">Download App</a>
+        <a href="https://helalink.com/register.php?ref=Shaurya" class="button">Get an account</a>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+      <p>Have questions? Visit our <a href="https://wa.me/254710311013">Support Center</a>.</p>
+    </div>
+  </div>
+
+  <!-- Offer Popup -->
+  <div id="offer-popup">
+    <span class="close-btn" onclick="closePopup()">&times;</span>
+   <img src="https://i.postimg.cc/4xm7fTfV/8efb13de-aa6f-40c0-bb24-3244c50b8e18.jpg" alt="Limited Time Offer" />
+    <p><b>🎉 Register now and get 💵 150 cashback as a welcome bonus! 🚀 Don’t miss this amazing offer—limited time only! ⏳ Start your financial journey with Hela Link today! 💼✨</b></p>
+    <a href="https://helalink.com/register.php?ref=Shaurya" class="popup-button">Claim Offer</a>
+  </div>
+<style>
+  .whatsapp-float {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 100;
+    animation: flip 1.5s infinite alternate;
+  }
+
+  @keyframes flip {
+    0% { transform: rotateY(0deg); }
+    100% { transform: rotateY(180deg); }
+  }
+
+  .whatsapp-float img {
+    width: 60px;
+    height: 60px;
+  }
+</style>
+
+<a href="https://wa.me/254710311013" target="_blank" class="whatsapp-float">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="Chat on WhatsApp">
+</a>
+  <script>
+    function closePopup() {
+      document.getElementById('offer-popup').style.display = 'none';
+    }
+
+    setTimeout(function () {
+      document.getElementById('offer-popup').style.display = 'block';
+    }, 2000);
+  </script>
+
+</body>
+
+</html>
